@@ -1,0 +1,128 @@
+﻿<Window x:Class="SpecLookUp.EditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SpecLookUp"
+        mc:Ignorable="d"
+        Title="Edit Device Log" Height="406.333" Width="677.833" WindowStartupLocation="CenterScreen" FontSize="16" ResizeMode="NoResize" ShowInTaskbar="False" Topmost="True">
+    <Grid  >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" MinHeight="128"/>
+            <RowDefinition Height="auto" MinHeight="161"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+
+
+
+        <StackPanel Grid.Row="0" Margin="15,5">
+            <TextBlock Text="Device Info" VerticalAlignment="Top" FontWeight="Bold"  Margin="5,0,0,-6" Padding="0"/>
+            <StackPanel Background="#FFE5E8EC" Margin="5,5" IsEnabled="False">
+
+                <StackPanel Margin="10,8">
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" >
+                        <TextBlock Text="Device: " VerticalAlignment="Center" Width="90"/>
+                        <TextBox Margin="0,2" VerticalAlignment="Center" Width="180" x:Name="DeviceTBox"/>
+                        <TextBlock Text="Serial:" VerticalAlignment="Center" Width="43" Margin="19,0" />
+                        <TextBox Margin="0,2" VerticalAlignment="Center" Width="259" x:Name="SerialTBox"/>
+
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <TextBlock Text="Description: " VerticalAlignment="Top" Width="90" />
+                        <TextBox Width="520" Margin="0,2" VerticalAlignment="Center" x:Name="DescriptionTBox" Height="46"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Margin="15,5">
+            <TextBlock Text="Edit Log" VerticalAlignment="Top" FontWeight="Bold"  Margin="5,0,0,-6" Padding="0"/>
+            <StackPanel Background="#FFE5E8EC" Margin="5,5">
+
+
+                <StackPanel Margin="10,8">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="145*"/>
+                            <ColumnDefinition Width="146*"/>
+                        </Grid.ColumnDefinitions>
+
+
+                        <StackPanel Grid.Column="0">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <TextBlock Text="Log Type:" VerticalAlignment="Center" Width="90"/>
+                                <ComboBox x:Name="TypeTBox" IsEditable="True" Opacity="1"   Width="180" Height="23"  HorizontalAlignment="Left">
+                                    <ComboBoxItem Content="SO"/>
+                                    <ComboBoxItem Content="PO"/>
+                                    <ComboBoxItem Content="RMA"/>
+                                    <ComboBoxItem Content="Other"/>
+                                </ComboBox>
+                            </StackPanel>
+                            
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <TextBlock Text="Sale Order:" VerticalAlignment="Center" Width="90"/>
+                                <TextBox Margin="0,2" VerticalAlignment="Center" Width="180" x:Name="SoTBox" MaxLines="1" MaxLength="10"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" >
+                                <TextBlock Text="User: " VerticalAlignment="Center" Width="90" />
+                                <TextBox Margin="0,2" VerticalAlignment="Center"  Width="180" x:Name="RpTBox" MaxLength="6" MaxLines="1"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <TextBlock Text="OS Label:" VerticalAlignment="Center" Width="90"/>
+                                <ComboBox x:Name="LabelTBox" IsEditable="True" Opacity="1"   Width="180" Height="23"  HorizontalAlignment="Left">
+                                    <ComboBoxItem Content="Win10 Pro CMAR"/>
+                                    <ComboBoxItem Content="RRPC"/>
+                                    <ComboBoxItem Content="Win10 Home CMAR"/>
+                                    <ComboBoxItem Content="Win10 Pro OEM"/>
+                                    <ComboBoxItem Content="Win10 Home OEM"/>
+                                    <ComboBoxItem Content="Win7 Pro COA"/>
+                                    <ComboBoxItem Content="Win7 Home Premium COA"/>
+                                    <ComboBoxItem Content="Win8 OEM"/>
+                                    <ComboBoxItem Content="No COA"/>
+                                </ComboBox>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                <TextBlock Text="CMAR:" VerticalAlignment="Center" Width="90"/>
+                                <TextBox Margin="0,2" VerticalAlignment="Center" Width="180" x:Name="CmarTBox" MaxLength="14" MaxLines="1"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel  HorizontalAlignment="Left" Grid.Column="1" Width="288">
+                            <TextBlock Text="Comments: " VerticalAlignment="Center" HorizontalAlignment="Left" Margin="-16,0,0,0" Width="99" Height="22"/>
+                            <TextBox Margin="-15,2,-17,2" VerticalAlignment="Center" Height="82" x:Name="CommentsTBox" MaxLength="255" MaxLines="6"/>
+                        </StackPanel>
+
+                    </Grid>
+
+                </StackPanel>
+
+
+            </StackPanel>
+        </StackPanel>
+
+
+
+
+
+        <Grid Grid.Row="1" Margin="15,156,15,0" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="160"/>
+                <ColumnDefinition Width="160"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="160"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Content="Update" Margin="5,5" Height="34" Click="Update_Click"/>
+            <Button Grid.Column="1" Content="Remove" Margin="5,5" Height="34" Click="Remove_Click"/>
+        </Grid>
+    </Grid>
+</Window>
