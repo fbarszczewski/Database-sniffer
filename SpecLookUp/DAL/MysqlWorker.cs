@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
-using MySql.Data.MySqlClient;
+using MySqlConnector;
 using SpecLookUp.Model;
 
 namespace SpecLookUp.DAL
